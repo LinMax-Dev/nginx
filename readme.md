@@ -44,5 +44,28 @@
 **HTTP context**: Configures HTTP serer behavior.
 **Server context**: Defines settings for virtual hosts (server blocks).
 **Location context** : specifies how to process requests for specific locatios or URLs. 
-
+**Main Context file** 
 ![Main Configuration](img/cat%20etc%20nginx%20nginx.conf.jpg)
+
+**Max_clients = worker_processes :heavy_multiplication_x: worker_connections**  
+
+**Configuring Error and Access logging** 
+Access logs 
+``` powershell 
+/var/log/nginx/access.log main; 
+```
+Error logs 
+``` powershell 
+/var/log/nginx/error.log warn; 
+```
+**Document Root and Permissions** : NGINX involves defining the document root , which is the directory where website files like **index.html** are stored 
+![server](img/Doument_store.jpg)
+**Dont forget to change the root** 
+``` powershell 
+sudo chown -R nginx:nginx /var/www/html
+```
+* make custom error page
+![error_page](img/custom_error_page.jpg)
+
+* managing Virtual hosts **multiple of websites**
+![multiple_websites](img/multiple_websites.jpg)
