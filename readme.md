@@ -37,4 +37,12 @@
      ```powershell 
      setsebool -P httpd_can_network_connect 1 | getsebool httpd_can_network_connect
      ```
+---
+### Configuration files 
+**Main context** : Global setting like worker processes.
+**Events context** : Handles connection processing.
+**HTTP context**: Configures HTTP serer behavior.
+**Server context**: Defines settings for virtual hosts (server blocks).
+**Location context** : specifies how to process requests for specific locatios or URLs. 
 
+![Main Configuration](img/cat%20etc%20nginx%20nginx.conf.jpg)
