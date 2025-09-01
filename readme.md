@@ -16,10 +16,25 @@
     dnf install epel-release -y
     
     ```
-        ```powershell 
+    ```powershell 
     dnf install nginx -y
     ```
+
 * After instalation , you will manage NGINX using the systemd ervice manager 
+    ```powershell 
+    systemctl start nginx | systemctl enable nginx 
+    
+    ```
 * Open firewall for http and https protocols 
+     ```powershell 
+     firewall-cmd --permanent --add-service=http |
+     firewall-cmd --permanent --add-service=https
+     ```
+     ```powershell 
+     firewall-cmd --reload 
+     ```
 * Security-Enhanced Linux (SELinux) provides and additional security layer 
+     ```powershell 
+     setsebool -P httpd_can_network_connect 1 | getsebool httpd_can_network_connect
+     ```
 
